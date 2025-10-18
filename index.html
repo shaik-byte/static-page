@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple HTML Page</title>
+  <style>
+    /* Simple styles */
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin: 0; padding: 1.5rem; line-height: 1.5; }
+    header { background:#0b74de; color:#fff; padding:1rem; border-radius:8px; }
+    main { margin-top:1rem; }
+    .card { border:1px solid #eee; padding:1rem; border-radius:8px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+    footer { margin-top:1.5rem; color:#666; font-size:0.9rem; }
+    button { padding:0.5rem 1rem; border-radius:6px; border: none; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome! to CodeKamikaze</h1>
+    <p>Simple HTML example with a bit of interactivity.</p>
+  </header>
+
+  <main>
+    <section class="card" id="intro">
+      <h2>About this page</h2>
+      <p>This page demonstrates basic HTML structure, CSS, and a tiny JavaScript interaction.</p>
+      <ul>
+        <li>Header, main content, footer</li>
+        <li>Styled card</li>
+        <li>Button that shows an alert</li>
+      </ul>
+      <button id="myButton" type="button">Click me</button>
+    </section>
+
+```
+<section class="card" style="margin-top:1rem;">
+  <h2>Contact</h2>
+  <p>If this were a real site you'd add a form. Here's a placeholder link:</p>
+  <p><a href="https://example.com" target="_blank" rel="noopener">Visit example.com</a></p>
+</section>
+```
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> Simple Example — Built with HTML
+  </footer>
+
+  <script>
+    // small JS: set current year and add a button click handler
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('myButton').addEventListener('click', function () {
+      const intro = document.getElementById('intro');
+      intro.style.transition = 'background .3s ease';
+      intro.style.background = '#f0f8ff';
+      alert('Hello! This is a simple interaction.');
+    });
+  </script>
+
+</body>
+</html>
