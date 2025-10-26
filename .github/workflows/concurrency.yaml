@@ -41,6 +41,12 @@ jobs:
 
 
 
+  deploy2:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "Deploying application..."
 
 
 
