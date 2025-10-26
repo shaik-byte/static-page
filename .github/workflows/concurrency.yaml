@@ -70,4 +70,11 @@ jobs:
     steps:
       - name: Deploy
         run: echo "Deploying application..."
+
+  deploy6:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "Deploying application..."
         
