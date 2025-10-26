@@ -6,7 +6,7 @@ on:
       - main
 
 concurrency:
-  group: ci-${{ github.ref }}        # Unique per branch
+  group: ci-${{ github.ref }}-${{ github.workflow }}     # Unique per branch
   cancel-in-progress: true           # Cancel previous runs in the same branch
 
 jobs:
