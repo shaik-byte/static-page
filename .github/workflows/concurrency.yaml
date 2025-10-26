@@ -5,14 +5,13 @@ on:
     branches:
       - main
 
-# Ensure only one workflow per branch runs, cancel older ones
 concurrency:
   group: ci-${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
 
 jobs:
   build:
-    # Run only if this workflow is for the latest commit
+    # Only run this job for the latest commit
     if: ${{ github.event.head_commit.id == github.sha }}
     runs-on: ubuntu-latest
     steps:
@@ -27,17 +26,9 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
-          sleep 60   # simulate long-running step
+          sleep 60
 
       - name: Run Tests
         run: |
           npm test
-          sleep 60   # simulate long-running step
-
-
-
-
-
-
-
-          
+          sleep 60
