@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - main
-      
+
 concurrency:
-  group: ${{ github.ref }}      # Unique per branch
-  cancel-in-progress: true      # Cancel previous runs in the same branch
+  group: ci-${{ github.ref }}        # Unique per branch
+  cancel-in-progress: true           # Cancel previous runs in the same branch
 
 jobs:
   build:
@@ -23,86 +23,10 @@ jobs:
 
       - name: Install Dependencies
         run: |
-         npm install
-         sleep 60
+          npm install
+          sleep 60   # simulate long-running step
 
       - name: Run Tests
         run: |
-         npm test
-         sleep 60
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "Deploying application..."
-
-
-
-
-  deploy2:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "Deploying application..."
-
-
-  deploy3:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "Deploying application..."
-
-
-  deploy4:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "Deploying application..."
-
-  deploy5:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "Deploying application..."
-
-  deploy6:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "Deploying application..."
-        
-  deploy7:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "Deploying application..."
-
-  deplo22y4:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "Deploying application..."
-  deplo4y4:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "Deploying application..."
-
-
-  deploy4:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo "Deploying application..."
-
+          npm test
+          sleep 60   # simulate long-running step
